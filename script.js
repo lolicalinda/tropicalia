@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', function(){
     ('aumentar-fonte');
     const diminuirFonteBotao= document.getElementById
     ('diminuir-fonte');
+    const alternaContraste = document.getElementById
+    ('alterna-contraste');
 
     let tamanhoAtualFonte=1;
 
@@ -20,8 +22,16 @@ const botaoDeAcessibilidade = document.getElementById('botao-acessbilidade');
 const opcoesDeAcessibilidade = document.getElementById('opcoes-acessiilidade');
 botaoDeAcessibilidade.addEventListener ('function', function(){
     botaoDeAcessibilidade.classList.toggle('apresenta-lista');
-    opcoesDeAcessibilidade.classList.toggle('apresenta-lita')
+    opcoesDeAcessibilidade.classList.toggle('apresenta-lita');
+
+    const botaoSelecionado = botaoDeAcessibilidade.getAttribute('aria-expanded') ==='true';
+    botaoDeAcessibilidade.setAttribute('aria-expanded', !botaoSelecionado);
 })
+
+alternaContraste.addEventListener('click', function(){
+    document.body.classList.toggle('altocontaste')
+})
+
 
 })
 
